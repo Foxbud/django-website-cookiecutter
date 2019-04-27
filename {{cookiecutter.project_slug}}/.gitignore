@@ -1,0 +1,3 @@
+*.css
+__pycache__/
+tmp/
