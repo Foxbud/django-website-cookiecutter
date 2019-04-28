@@ -3,7 +3,7 @@
 
 <div class="form-block">
 
-	{# Non-field errors. #}
+	{%raw%}{# {%endraw%}Non-field errors.{%raw%} #}{%endraw%}
 	{%raw%}{% {%endraw%}for error in form.non_field_errors{%raw%} %}{%endraw%}
 		<div class="alert alert-danger alert-dismissable my-2">
 			<button class="close"
@@ -18,7 +18,7 @@
 	{%raw%}{% {%endraw%}for field in form{%raw%} %}{%endraw%}
 		{%raw%}{% {%endraw%}with type=field.field.widget|cls_name{%raw%} %}{%endraw%}
 
-			{# Field errors. #}
+			{%raw%}{# {%endraw%}Field errors.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}for error in field.errors{%raw%} %}{%endraw%}
 				<div class="alert alert-danger alert-dismissable my-2">
 					<button class="close"
@@ -30,11 +30,11 @@
 				</div>
 			{%raw%}{% {%endraw%}endfor{%raw%} %}{%endraw%}
 
-			{# Hidden. #}
+			{%raw%}{# {%endraw%}Hidden.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}if type == 'HiddenInput'{%raw%} %}{%endraw%}
 				{%raw%}{{ {%endraw%}field{%raw%} }}{%endraw%}
 
-			{# Text. #}
+			{%raw%}{# {%endraw%}Text.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'TextInput'{%raw%} %}{%endraw%}
 				<div class="form-group">
 					<input id="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}"
@@ -53,7 +53,7 @@
 						placeholder="{%raw%}{{ {%endraw%}field.label{%raw%} }}{%endraw%}" />
 				</div>
 
-			{# Password. #}
+			{%raw%}{# {%endraw%}Password.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'PasswordInput'{%raw%} %}{%endraw%}
 				<div class="form-group">
 					<input
@@ -73,7 +73,7 @@
 						placeholder="{%raw%}{{ {%endraw%}field.label{%raw%} }}{%endraw%}" />
 				</div>
 
-			{# Email. #}
+			{%raw%}{# {%endraw%}Email.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'EmailInput'{%raw%} %}{%endraw%}
 				<div class="form-group">
 					<input id="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}"
@@ -92,7 +92,7 @@
 						placeholder="{%raw%}{{ {%endraw%}field.label{%raw%} }}{%endraw%}" />
 				</div>
 
-			{# URL. #}
+			{%raw%}{# {%endraw%}URL.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'URLInput'{%raw%} %}{%endraw%}
 				<div class="form-group">
 					<input id="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}"
@@ -111,7 +111,7 @@
 						placeholder="{%raw%}{{ {%endraw%}field.label{%raw%} }}{%endraw%}" />
 				</div>
 
-			{# Select. #}
+			{%raw%}{# {%endraw%}Select.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'Select'{%raw%} %}{%endraw%}
 				<div class="form-group">
 					<label for="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}">
@@ -136,7 +136,7 @@
 					</select>
 				</div>
 
-			{# Checkbox. #}
+			{%raw%}{# {%endraw%}Checkbox.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'CheckboxInput'{%raw%} %}{%endraw%}
 				<div class="d-flex justify-content-center custom-control custom-switch my-2">
 					<input id="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}"
@@ -156,7 +156,7 @@
 					</label>
 				</div>
 
-			{# File. #}
+			{%raw%}{# {%endraw%}File.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'FileInput' or type == 'ClearableFileInput'{%raw%} %}{%endraw%}
 				<div class="custom-file my-2">
 					<input id="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}"
@@ -177,7 +177,7 @@
 					</label>
 				</div>
 
-			{# Textarea. #}
+			{%raw%}{# {%endraw%}Textarea.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}elif type == 'Textarea'{%raw%} %}{%endraw%}
 				<div class="form-group">
 					<textarea id="{%raw%}{{ {%endraw%}field.id_for_label{%raw%} }}{%endraw%}"

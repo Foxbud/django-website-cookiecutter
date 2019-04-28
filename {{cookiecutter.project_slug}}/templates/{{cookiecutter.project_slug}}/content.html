@@ -4,12 +4,12 @@
 {%raw%}{% {%endraw%}block body{%raw%} %}{%endraw%}
 	{%raw%}{{ {%endraw%}block.super{%raw%} }}{%endraw%}
 
-	{# Messages. #}
+	{%raw%}{# {%endraw%}Messages.{%raw%} #}{%endraw%}
 	{%raw%}{% {%endraw%}include '{{cookiecutter.project_slug}}/snippets/message_list.html'{%raw%} %}{%endraw%}
 
 	<div class="container">
 
-		{# Main page content. #}
+		{%raw%}{# {%endraw%}Main page content.{%raw%} #}{%endraw%}
 		{%raw%}{% {%endraw%}block content{%raw%} %}{%endraw%}
 		{%raw%}{% {%endraw%}endblock content{%raw%} %}{%endraw%}
 
