@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 	'apps.{{cookiecutter.project_slug}}',
 
 	# Extra custom apps.
+	'apps.hello',
 
 	# Built-in Django apps.
 	'django.contrib.admin',
