@@ -16,7 +16,7 @@
 	{%raw%}{% {%endraw%}endfor{%raw%} %}{%endraw%}
 
 	{%raw%}{% {%endraw%}for field in form{%raw%} %}{%endraw%}
-		{%raw%}{% {%endraw%}with type=field.field.widget|cls_name{%raw%} %}{%endraw%}
+		{%raw%}{% {%endraw%}with type=field.field.widget|cls{%raw%} %}{%endraw%}
 
 			{%raw%}{# {%endraw%}Field errors.{%raw%} #}{%endraw%}
 			{%raw%}{% {%endraw%}for error in field.errors{%raw%} %}{%endraw%}
