@@ -1,15 +1,19 @@
 {%raw%}{% {%endraw%}extends '{{cookiecutter.project_slug}}/content.html'{%raw%} %}{%endraw%}
 
 
+{%raw%}{% {%endraw%}load button_row_tags{%raw%} %}{%endraw%}
+
+
 {%raw%}{% {%endraw%}block content{%raw%} %}{%endraw%}
 
 	<div class="row">
 		<div class="col-12">
-			<div class="card {%if cookiecutter.mdbootstrap%}grey lighten-5{%else%}bg-light{%endif%} my-5">
+			<div class="card {%if cookiecutter.use_md_bootstrap == 'yes'%}grey lighten-5{%else%}bg-light{%endif%} my-5">
 				<div class="card-body">
-					<p class="card-text text-center{%if not cookiecutter.mdbootstrap%} text-secondary{%endif%}">
+					<p class="card-text text-center{%if cookiecutter.use_md_bootstrap == 'no'%} text-secondary{%endif%}">
 						Hello World!
 					</p>
+					{%raw%}{% {%endraw%}button_row text='Hello|World' color='primary|danger'{%raw%} %}{%endraw%}
 				</div>
 			</div>
 		</div>

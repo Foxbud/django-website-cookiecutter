@@ -1,0 +1,43 @@
+<div class="container-fluid">
+	<div class="row">
+
+		{%raw%}{# {%endraw%}Pre-spacers.{%raw%} #}{%endraw%}
+		{%raw%}{% {%endraw%}if num_buttons == 1{%raw%} %}{%endraw%}
+			<div class="col-0 col-lg-4"></div>
+		{%raw%}{% {%endraw%}elif num_buttons == 2{%raw%} %}{%endraw%}
+			<div class="col-0 col-lg-2"></div>
+		{%raw%}{% {%endraw%}endif{%raw%} %}{%endraw%}
+
+		{%raw%}{# {%endraw%}Buttons.{%raw%} #}{%endraw%}
+		{%raw%}{% {%endraw%}for button in buttons{%raw%} %}{%endraw%}
+			{%raw%}{# {%endraw%}Rows of three on desktop; rows of one on mobile.{%raw%} #}{%endraw%}
+			<div class="col-12 col-lg-4{%if cookiecutter.use_md_bootstrap == 'no'%} my-1{%endif%}">
+				<button class="btn btn-{%raw%}{{ {%endraw%}button.color{%raw%} }}{%endraw%} w-100"
+					{%raw%}{% {%endraw%}if button.script or button.dest{%raw%} %}{%endraw%}
+						type="button"
+					{%raw%}{% {%endraw%}else{%raw%} %}{%endraw%}
+						type="submit"
+					{%raw%}{% {%endraw%}endif{%raw%} %}{%endraw%}
+					{%raw%}{% {%endraw%}if button.name{%raw%} %}{%endraw%}
+						name="{%raw%}{{ {%endraw%}button.name{%raw%} }}{%endraw%}"
+					{%raw%}{% {%endraw%}endif{%raw%} %}{%endraw%}
+					{%raw%}{% {%endraw%}if button.script{%raw%} %}{%endraw%}
+						onclick="{%raw%}{{ {%endraw%}button.script{%raw%} }}{%endraw%}"
+					{%raw%}{% {%endraw%}elif button.dest{%raw%} %}{%endraw%}
+						onclick="window.location.href='{%raw%}{{ {%endraw%}button.dest{%raw%} }}{%endraw%}'"
+					{%raw%}{% {%endraw%}endif{%raw%} %}{%endraw%}
+					>
+					{%raw%}{{ {%endraw%}button.text|safe{%raw%} }}{%endraw%}
+				</button>
+			</div>
+		{%raw%}{% {%endraw%}endfor{%raw%} %}{%endraw%}
+
+		{%raw%}{# {%endraw%}Post-spacers.{%raw%} #}{%endraw%}
+		{%raw%}{% {%endraw%}if num_buttons == 1{%raw%} %}{%endraw%}
+			<div class="col-0 col-lg-4"></div>
+		{%raw%}{% {%endraw%}elif num_buttons == 2{%raw%} %}{%endraw%}
+			<div class="col-0 col-lg-2"></div>
+		{%raw%}{% {%endraw%}endif{%raw%} %}{%endraw%}
+
+	</div>
+</div>

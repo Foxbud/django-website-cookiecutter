@@ -28,8 +28,8 @@
 
 			{%raw%}{# {%endraw%}CSS libraries.{%raw%} #}{%endraw%}
 			<link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css" />
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
-			{%if cookiecutter.mdbootstrap%}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/css/mdb.min.css" />{%endif%}
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />{%if cookiecutter.use_md_bootstrap == 'yes'%}
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" />{%endif%}
 
 		{%raw%}{% {%endraw%}endblock head{%raw%} %}{%endraw%}
 	</head>
@@ -44,8 +44,8 @@
 			{%raw%}{# {%endraw%}Javascript libraries.{%raw%} #}{%endraw%}
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-			{%if cookiecutter.mdbootstrap%}<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>{%endif%}
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>{%if cookiecutter.use_md_bootstrap == 'yes'%}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>{%endif%}
 
 		{%raw%}{% {%endraw%}endblock js{%raw%} %}{%endraw%}
 
