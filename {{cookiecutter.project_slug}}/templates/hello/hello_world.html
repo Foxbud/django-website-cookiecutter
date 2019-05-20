@@ -5,9 +5,9 @@
 
 	<div class="row">
 		<div class="col-12">
-			<div class="card bg-light my-5">
+			<div class="card {%if cookiecutter.mdbootstrap%}grey lighten-5{%else%}bg-light{%endif%} my-5">
 				<div class="card-body">
-					<p class="card-text text-center text-secondary">
+					<p class="card-text text-center{%if not cookiecutter.mdbootstrap%} text-secondary{%endif%}">
 						Hello World!
 					</p>
 				</div>

@@ -1,5 +1,6 @@
 {
 	"project_name": "New Django Website",
 	"project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')}}",
-	"project_class": "{{cookiecutter.project_name|replace(' ', '')}}"
+	"project_class": "{{cookiecutter.project_name|replace(' ', '')}}",
+	"mdbootstrap": false
 }
