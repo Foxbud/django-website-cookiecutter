@@ -12,7 +12,7 @@
 		{%raw%}{% {%endraw%}for button in buttons{%raw%} %}{%endraw%}
 			{%raw%}{# {%endraw%}Rows of three on desktop; rows of one on mobile.{%raw%} #}{%endraw%}
 			<div class="col-12 col-lg-4{%if cookiecutter.use_md_bootstrap == 'no'%} my-1{%endif%}">
-				<button class="btn btn-{%raw%}{{ {%endraw%}button.color{%raw%} }}{%endraw%} w-100"
+				<button class="btn btn-{%raw%}{{ {%endraw%}button.color{%raw%} }}{%endraw%} w-100{%if cookiecutter.use_md_bootstrap == 'yes'%} mx-0{%endif%}"
 					{%raw%}{% {%endraw%}if button.script or button.dest{%raw%} %}{%endraw%}
 						type="button"
 					{%raw%}{% {%endraw%}else{%raw%} %}{%endraw%}
