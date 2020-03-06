@@ -1,0 +1,17 @@
+{% extends 'common/panel.html' %}
+
+
+{% block title %}
+	{{ flatpage.title }}
+	{{ block.super }}
+{% endblock title %}
+
+
+{% block panel_title %}
+	{{ flatpage.title }}
+{% endblock panel_title %}
+
+
+{% block panel_body %}
+	{{ flatpage.content }}
+{% endblock panel_body %}

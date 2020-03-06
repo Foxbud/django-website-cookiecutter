@@ -1,0 +1,44 @@
+{% load class_filters %}
+
+
+{% with type=field.field.widget|cls %}
+
+	{# Text and URL. #}
+	{% if type == 'TextInput' or type == 'URLInput' %}
+		{% include 'common/snippets/form/fields/text.html' %}
+
+	{# Password. #}
+	{% elif type == 'PasswordInput' %}
+		{% include 'common/snippets/form/fields/password.html' %}
+
+	{# Email. #}
+	{% elif type == 'EmailInput' %}
+		{% include 'common/snippets/form/fields/email.html' %}
+
+	{# Number. #}
+	{% elif type == 'NumberInput' %}
+		{% include 'common/snippets/form/fields/number.html' %}
+
+	{# Select. #}
+	{% elif type == 'Select' %}
+		{% include 'common/snippets/form/fields/select.html' %}
+
+	{# Checkbox. #}
+	{% elif type == 'CheckboxInput' %}
+		{% include 'common/snippets/form/fields/checkbox.html' %}
+
+	{# Textarea. #}
+	{% elif type == 'Textarea' %}
+		{% include 'common/snippets/form/fields/textarea.html' %}
+
+	{# File. #}
+	{% elif type == 'FileInput' or type == 'ClearableFileInput' %}
+		{% include 'common/snippets/form/fields/file.html' %}
+
+	{# Unknown. #}
+	{% else %}
+		{% include 'common/snippets/form/fields/unknown.html' %}
+
+	{% endif %}
+
+{% endwith %}

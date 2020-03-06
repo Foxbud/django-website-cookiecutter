@@ -1,0 +1,10 @@
+<label for="{{ field.id_for_label }}"
+	{% if classes %}
+			 class="{{ classes }}"
+	{% endif %}
+	>
+	{{ field.label }}
+	{% if not field.field.required %}
+		(Optional)
+	{% endif %}
+</label>

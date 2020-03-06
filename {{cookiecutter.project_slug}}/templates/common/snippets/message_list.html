@@ -1,0 +1,19 @@
+<script>
+	{% if messages %}
+		$(document).ready(function() {
+			{% for message in messages %}
+				{% if message.level == DEFAULT_MESSAGE_LEVELS.DEBUG %}
+				    toastr.info('{{ message }}', 'Debug');
+				{% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+				    toastr.info('{{ message }}', 'Info');
+				{% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+				    toastr.success('{{ message }}', 'Success');
+				{% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+				    toastr.warning('{{ message }}', 'Warning');
+				{% else %}
+				    toastr.error('{{ message }}', 'Error');
+				{% endif %}
+    	{% endfor %}
+		});
+	{% endif %}
+</script>

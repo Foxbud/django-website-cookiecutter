@@ -1,6 +1,12 @@
 {
 	"project_name": "New Django Website",
 	"project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')}}",
-	"project_class": "{{cookiecutter.project_name|replace(' ', '')}}",
-	"use_md_bootstrap": ["yes", "no"]
+	"project_domain_name": "example.com",
+	"project_author": "Anonymous",
+	"project_description": "This is a website built using Django.",
+	"production_timezone": "America/New_York",
+	"development_timezone": "{{cookiecutter.production_timezone}}",
+	"_copy_without_render": [
+		"*.html"
+	]
 }

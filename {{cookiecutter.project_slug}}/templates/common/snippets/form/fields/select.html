@@ -1,0 +1,25 @@
+<div class="form-group">
+	{% include 'common/snippets/form/field_label.html' %}
+	<select id="{{ field.id_for_label }}"
+		class="form-control
+			{% if form.errors %}
+				is-{% if field.errors %}in{% endif %}valid
+			{% endif %}
+			"
+		name="{{ field.html_name }}"
+		{% if field.field.required %}
+			required
+		{% endif %}
+		>
+		{% for name, display in field.field.choices %}
+			<option value="{{ name }}"
+				{% if field.value == name %}
+					selected
+				{% endif %}
+				>
+				{{ display }}
+			</option>
+		{% endfor %}
+	</select>
+	{% include 'common/snippets/form/field_errors.html' %}
+</div>

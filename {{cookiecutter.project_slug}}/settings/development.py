@@ -48,7 +48,7 @@ INTERNAL_IPS = [
 
 # ----- LOCALIZATION -----
 
-TIME_ZONE = 'EST'
+TIME_ZONE = '{{cookiecutter.development_timezone}}'
 
 
 # ----- STATIC AND MEDIA FILES -----

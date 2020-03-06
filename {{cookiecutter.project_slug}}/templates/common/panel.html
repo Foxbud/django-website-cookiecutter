@@ -1,0 +1,46 @@
+{% extends 'common/content.html' %}
+
+
+{% load sass_tags %}
+
+
+{% block head %}
+	{{ block.super }}
+	<link rel="stylesheet" href="{% sass_src 'common/css/center.scss' %}" />
+{% endblock head %}
+
+
+{% block content %}
+
+	<div class="vertical-center">
+		<div class="row w-100">
+
+			{# Spacer. #}
+			<div class="col"></div>
+
+			{# 8/12 width on desktop; full width on mobile. #}
+			<div class="col-{{ theme.class.desktop }}-8">
+				<div class="card shadow-sm my-4">
+					<div class="card-body text-secondary text-center">
+
+						{# Panel title. #}
+						<h4 class="card-title">
+							{% block panel_title %}
+							{% endblock panel_title %}
+						</h4>
+
+						{# Panel body. #}
+						{% block panel_body %}
+						{% endblock panel_body %}
+
+					</div>
+				</div>
+			</div>
+
+			{# Spacer. #}
+			<div class="col"></div>
+
+		</div>
+	</div>
+
+{% endblock content %}

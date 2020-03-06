@@ -1,0 +1,19 @@
+<div class="custom-control custom-switch mb-3">
+	<input id="{{ field.id_for_label }}"
+		class="custom-control-input
+			{% if form.errors %}
+				is-{% if field.errors %}in{% endif %}valid
+			{% endif %}
+			"
+		type="checkbox"
+		name="{{ field.html_name }}"
+		{% if field.value %}
+			checked
+		{% endif %}
+		{% if field.field.required %}
+			required
+		{% endif %}
+		/>
+	{% include 'common/snippets/form/field_label.html' with classes='custom-control-label' %}
+	{% include 'common/snippets/form/field_errors.html' %}
+</div>

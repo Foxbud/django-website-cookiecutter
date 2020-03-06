@@ -1,0 +1,15 @@
+{% load class_filters %}
+
+
+{# Add CSRF token. #}
+{% csrf_token %}
+
+{# Display non-field errors. #}
+{% include 'common/snippets/form/errors.html' with errors=form.non_field_errors %}
+
+{# Add all hidden form fields. #}
+{% for field in form %}
+	{% if field.field.widget|cls == 'HiddenInput' %}
+		{% include 'common/snippets/form/fields/hidden.html' %}
+	{% endif %}
+{% endfor %}

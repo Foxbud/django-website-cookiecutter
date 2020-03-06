@@ -22,16 +22,17 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
-	# Main website custom app.
-	'apps.{{cookiecutter.project_slug}}',
+	# Main website common app.
+	'apps.common',
 
 	# Extra custom apps.
-	'apps.hello',
+	'apps.example_app',
 
 	# Built-in Django apps.
 	'django.contrib.admin',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
+	'django.contrib.flatpages',
 	'django.contrib.humanize',
 	'django.contrib.messages',
 	'django.contrib.sessions',
@@ -51,9 +52,10 @@ MIDDLEWARE = [
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
-ROOT_URLCONF = 'apps.{{cookiecutter.project_slug}}.urls'
+ROOT_URLCONF = 'apps.common.urls'
 
 TEMPLATES = [
 	{
@@ -65,7 +67,8 @@ TEMPLATES = [
 				'django.template.context_processors.request',
 				'django.contrib.auth.context_processors.auth',
 				'django.contrib.messages.context_processors.messages',
-				'apps.{{cookiecutter.project_slug}}.context_processors.website_details',
+				'apps.common.context_processors.website_details',
+				'apps.common.context_processors.theme',
 			],
 		},
 	},
@@ -89,7 +92,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = os.environ.get('DJANGO_TIMEZONE', '')
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 
@@ -146,7 +149,7 @@ AUTH_PASSWORD_VALIDATORS = [
 	},
 ]
 
-AUTH_USER_MODEL = '{{cookiecutter.project_slug}}.User'
+AUTH_USER_MODEL = 'common.User'
 
 LOGIN_URL = 'admin:login'
 
@@ -155,3 +158,21 @@ LOGIN_REDIRECT_URL = '/'
 USERNAME_MIN_LEN = 3
 
 USERNAME_MAX_LEN = 20
+
+
+# ----- THEMING -----
+
+# Can be one of: sm, md, lg, or xl
+THEME_CLASS_DESKTOP = 'lg'
+
+
+# ----- MISC WEBSITE INFO -----
+
+WEBSITE_DESCRIPTION = '{{cookiecutter.project_description}}'
+
+WEBSITE_KEYWORDS = [
+	'example',
+	'keywords',
+]
+
+WEBSITE_AUTHOR = '{{cookiecutter.project_author}}'

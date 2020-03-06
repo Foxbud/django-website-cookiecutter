@@ -1,0 +1,30 @@
+{% extends 'common/panel.html' %}
+
+
+{% block title %}
+	Error
+	{{ block.super }}
+{% endblock title %}
+
+
+{% block panel_title %}
+
+	{# Error code. #}
+	{% block error_code %}
+		Unknown
+	{% endblock error_code %}
+
+	Error
+{% endblock panel_title %}
+
+
+{% block panel_body %}
+
+	{# Error message. #}
+	<p class="card-text text-center text-secondary">
+		{% block error_message %}
+			An unknown error occurred.
+		{% endblock error_message %}
+	</p>
+
+{% endblock panel_body %}

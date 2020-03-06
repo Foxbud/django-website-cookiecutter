@@ -1,0 +1,8 @@
+{# Include common form elements. #}
+{% include 'common/snippets/form/common.html' %}
+
+
+{# Display all non-hidden fields. #}
+{% for field in form %}
+	{% include 'common/snippets/form/field.html' %}
+{% endfor %}

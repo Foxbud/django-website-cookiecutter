@@ -1,0 +1,10 @@
+{% for error in errors %}
+	<div class="alert alert-danger alert-dismissable my-2 fade show">
+		<button class="close"
+			type="button"
+			data-dismiss="alert">
+			<span class="mdi mdi-close"></span>
+		</button>
+		<span>{{ error }}</span>
+	</div>
+{% endfor %}

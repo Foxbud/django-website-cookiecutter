@@ -1,0 +1,26 @@
+{% extends 'common/panel.html' %}
+
+
+{% load button_row_tags %}
+
+
+{% block title %}
+	Example
+	{{ block.super }}
+{% endblock title %}
+
+
+{% block panel_title %}
+	Example Page
+{% endblock panel_title %}
+
+
+{% block panel_body %}
+
+		<p class="card-text text-center">
+			{{ website.description }}
+		</p>
+
+		{% button_row text='Okay|Cancel' color='primary|danger' script="toastr.info('This is an example toast.', 'Example');|window.history.back();" %}
+
+{% endblock panel_body %}
